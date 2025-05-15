@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Count down section</title>
+  </head>
+  <body>
+    <div class="countdown_area">
+      <div class="countdown_heading">
+        <h2>We will be back soon, stay with us!</h2>
+      </div>
+      <div class="countdown_box" id="getting-started"></div>
+    </div>
+
+    <!-- jquery js -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- countdown js -->
+    <script src="assets/js/countdown.min.js"></script>
+
+    <script>
+      $('#getting-started').countdown('2026/06/01', function (event) {
+        // $(this).text(event.strftime("%D days %H:%M:%S"));
+        $(this).html(
+          event.strftime(
+            '<div class="single_countdown"><h4><span>%w</span>weeks</h4></div><div class="single_countdown"><h4><span>%d</span>days</h4></div><div class="single_countdown"><h4><span>%H</span>hours</h4></div><div class="single_countdown"><h4><span>%M</span>minutes</h4></div><div class="single_countdown"><h4><span>%S</span>seconds</h4></div>'
+          )
+        );
+      });
+    </script>
+  </body>
+</html>
